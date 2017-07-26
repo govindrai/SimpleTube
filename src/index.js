@@ -19,6 +19,7 @@ class App extends Component {
     };
 
     this.updateSelectedVideo = this.updateSelectedVideo.bind(this);
+    this.updateVideos = this.updateVideos.bind(this);
 
     YTSearch(
       {
@@ -26,6 +27,16 @@ class App extends Component {
         term: "javascript"
       },
       videos => this.setState({ videos, selectedVideo: videos[0] })
+    );
+  }
+
+  updateVideos(term) {
+    YTSearch(
+      {
+        key: YOUTUBE_API_KEY,
+        term
+      },
+      videos => this.setState({ videos })
     );
   }
 
@@ -37,7 +48,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <SearchBar />
+        <SearchBar updateVideosHandler={this.updateVideos} />
         <VideoDetail video={this.state.selectedVideo} />
         <VideoList
           updateSelectedVideoHandler={this.updateSelectedVideo}

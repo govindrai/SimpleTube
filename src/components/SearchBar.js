@@ -4,9 +4,16 @@ class SearchBar extends Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
+    this.handleKeyUp = this.handleKeyUp.bind(this);
     this.state = {
       searchTerm: ""
     };
+  }
+
+  handleKeyUp(event) {
+    if (event.key == "Enter") {
+      this.props.updateVideosHandler(event.target.value);
+    }
   }
 
   handleChange(event) {
@@ -18,7 +25,11 @@ class SearchBar extends Component {
   render() {
     return (
       <div className="search-bar">
-        <input onChange={this.handleChange} value={this.state.searchTerm} />
+        <input
+          onKeyUp={this.handleKeyUp}
+          onChange={this.handleChange}
+          value={this.state.searchTerm}
+        />
       </div>
     );
   }
