@@ -4,6 +4,7 @@ import YTSearch from "youtube-api-search";
 
 import SearchBar from "./components/SearchBar";
 import VideoList from "./components/VideoList";
+import VideoDetail from "./components/VideoDetail";
 
 const YOUTUBE_API_KEY = "AIzaSyBA47ATtM7zBOL6jgjwDk_ulSZzA4gldKQ";
 
@@ -13,23 +14,35 @@ class App extends Component {
     super(props);
 
     this.state = {
-      videos: []
+      videos: [],
+      selectedVideo: null
     };
+
+    this.updateSelectedVideo = this.updateSelectedVideo.bind(this);
 
     YTSearch(
       {
         key: YOUTUBE_API_KEY,
         term: "javascript"
       },
-      videos => this.setState({ videos })
+      videos => this.setState({ videos, selectedVideo: videos[0] })
     );
+  }
+
+  updateSelectedVideo(selectedVideo) {
+    console.log("made it here");
+    this.setState({ selectedVideo });
   }
 
   render() {
     return (
       <div>
         <SearchBar />
-        <VideoList videos={this.state.videos} />
+        <VideoList
+          updateSelectedVideoHandler={this.updateSelectedVideo}
+          videos={this.state.videos}
+        />
+        <VideoDetail video={this.state.selectedVideo} />
       </div>
     );
   }
