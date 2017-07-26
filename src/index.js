@@ -38,11 +38,11 @@ class App extends Component {
     return (
       <div>
         <SearchBar />
+        <VideoDetail video={this.state.selectedVideo} />
         <VideoList
           updateSelectedVideoHandler={this.updateSelectedVideo}
           videos={this.state.videos}
         />
-        <VideoDetail video={this.state.selectedVideo} />
       </div>
     );
   }
