@@ -9,7 +9,6 @@
   "main": "index.js",
   "repository": "git@github.com:StephenGrider/ReduxSimpleStarter.git",
   "scripts": {
-    // "postinstall": "NPM_CONFIG_PRODUCTION=false npm install && webpack build -p",
     "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "start": "node index.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
