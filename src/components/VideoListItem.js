@@ -1,4 +1,4 @@
-import React from "React";
+import React from "react";
 
 const VideoListItem = ({ video, updateSelectedVideoHandler }) => {
   const imageURL = video.snippet.thumbnails.default.url;
