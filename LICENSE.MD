@@ -1,5 +1,5 @@
 MIT License
-"postinstall": "NPM_CONFIG_PRODUCTION=false npm install && webpack build -p",
+"postinstall": "NPM_CONFIG_PRODUCTION=false npm install && webpack -p",
 
 Copyright (c) 2016 Stephen Grider
 
