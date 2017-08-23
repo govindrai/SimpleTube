@@ -1,5 +1,4 @@
 import React from "react";
-
 import VideoListItem from "./VideoListItem";
 
 const VideoList = ({ videos, updateSelectedVideoHandler }) =>
