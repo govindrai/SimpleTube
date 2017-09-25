@@ -1,8 +1,7 @@
 import React from "react";
-
 import VideoListItem from "./VideoListItem";
 
-const VideoList = ({ videos, updateSelectedVideoHandler }) =>
+const VideoList = ({ videos, updateSelectedVideoHandler }) => (
   <ul className="col-md-4 list-group">
     {videos.map(video => {
       return (
@@ -13,6 +12,7 @@ const VideoList = ({ videos, updateSelectedVideoHandler }) =>
         />
       );
     })}
-  </ul>;
+  </ul>
+);
 
 export default VideoList;
