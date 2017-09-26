@@ -11,7 +11,7 @@ class SearchBar extends Component {
   }
 
   handleKeyUp(event) {
-    if (event.key == "Enter") {
+    if (event.key === "Enter") {
       this.props.updateVideosHandler(event.target.value);
     }
   }
@@ -25,6 +25,7 @@ class SearchBar extends Component {
   render() {
     return (
       <div className="search-bar">
+        <img src="/public/logo3.png" height="115px" />
         <input
           onKeyUp={this.handleKeyUp}
           onChange={this.handleChange}
