@@ -11,9 +11,7 @@ class SearchBar extends Component {
   }
 
   handleKeyUp(event) {
-    if (event.key === "Enter") {
-      this.props.updateVideosHandler(event.target.value);
-    }
+    this.props.updateVideosHandler(event.target.value);
   }
 
   handleChange(event) {
