@@ -27,6 +27,7 @@ class SearchBar extends Component {
       <div className="search-bar">
         <img src="/public/logo3.png" height="115px" />
         <input
+          placeholder=" search videos"
           onKeyUp={this.handleKeyUp}
           onChange={this.handleChange}
           value={this.state.searchTerm}

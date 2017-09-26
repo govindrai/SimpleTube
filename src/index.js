@@ -6,6 +6,7 @@ import keys from "../config/keys";
 import SearchBar from "./components/SearchBar";
 import VideoList from "./components/VideoList";
 import VideoDetail from "./components/VideoDetail";
+import Footer from "./components/Footer";
 
 const { YOUTUBE_API_KEY } = keys;
 
@@ -55,6 +56,7 @@ class App extends Component {
           updateSelectedVideoHandler={this.updateSelectedVideo}
           videos={this.state.videos}
         />
+        <Footer />
       </div>
     );
   }
