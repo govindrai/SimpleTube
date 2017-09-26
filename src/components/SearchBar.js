@@ -26,7 +26,7 @@ class SearchBar extends Component {
     return (
       <div className="search-bar">
         <a href="/">
-          <img src="/logo3.png" height="115px" />
+          <img src="/logo3.png" height="50px" />
         </a>
         <input
           placeholder=" search videos"
