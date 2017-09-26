@@ -62,5 +62,4 @@ class App extends Component {
   }
 }
 
-// Take this component's generated HTML and put it on the page (in the DOM)
 render(<App />, document.querySelector(".container"));
