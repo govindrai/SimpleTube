@@ -25,7 +25,9 @@ class SearchBar extends Component {
   render() {
     return (
       <div className="search-bar">
-        <img src="/logo3.png" height="115px" />
+        <a href="/">
+          <img src="/logo3.png" height="115px" />
+        </a>
         <input
           placeholder=" search videos"
           onKeyUp={this.handleKeyUp}
