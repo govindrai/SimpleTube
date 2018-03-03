@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
 import YTSearch from "youtube-api-search";
-import keys from "../config/keys";
 
 import SearchBar from "./components/SearchBar";
 import VideoList from "./components/VideoList";
 import VideoDetail from "./components/VideoDetail";
 import Footer from "./components/Footer";
 
-const { YOUTUBE_API_KEY } = keys;
 
 // Create a new component. This component should produce some HTML
 class App extends Component {
@@ -35,7 +33,7 @@ class App extends Component {
   updateVideos(term) {
     YTSearch(
       {
-        key: YOUTUBE_API_KEY,
+        key: "AIzaSyC_LTdisHxCffxKBQkdH6s_LRURT7oZFz4",
         term
       },
       videos => this.setState({ videos })
