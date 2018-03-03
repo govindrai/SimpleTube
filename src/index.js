@@ -23,7 +23,7 @@ class App extends Component {
 
     YTSearch(
       {
-        key: YOUTUBE_API_KEY,
+        key: "AIzaSyC_LTdisHxCffxKBQkdH6s_LRURT7oZFz4",
         term: "javascript"
       },
       videos => this.setState({ videos, selectedVideo: videos[0] })
