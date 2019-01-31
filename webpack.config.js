@@ -1,28 +1,28 @@
-const path = require("path");
+const path = require('path');
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: './src/index.js',
   output: {
-    path: path.join(__dirname, "public"),
-    filename: "bundle.js"
+    path: path.join(__dirname, 'public'),
+    publicPath: '/',
+    filename: 'bundle.js',
   },
   module: {
-    loaders: [
+    rules: [
       {
         exclude: /node_modules/,
-        loader: "babel",
-        query: {
-          presets: ["react", "es2015", "stage-1"]
-        }
-      }
-    ]
-  },
-  resolve: {
-    extensions: ["", ".js", ".jsx"]
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          },
+        },
+      },
+    ],
   },
   devServer: {
     historyApiFallback: true,
-    contentBase: "./public/",
-    inline: true
-  }
+    inline: true,
+  },
+  mode: process.env.NODE_ENV || 'development',
 };

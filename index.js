@@ -8,6 +8,7 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
-app.listen(process.env.PORT || 3000, function() {
-  console.log("SimpleTube is now listening for connections!");
+const port = process.env.PORT || 3000
+app.listen(port, function() {
+  console.log(`SimpleTube is now listening for connections on port ${port}!`);
 });

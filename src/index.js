@@ -1,12 +1,11 @@
-import React, { Component } from "react";
-import { render } from "react-dom";
-import YTSearch from "youtube-api-search";
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+import YTSearch from 'youtube-api-search';
 
-import SearchBar from "./components/SearchBar";
-import VideoList from "./components/VideoList";
-import VideoDetail from "./components/VideoDetail";
-import Footer from "./components/Footer";
-
+import SearchBar from './components/SearchBar';
+import VideoList from './components/VideoList';
+import VideoDetail from './components/VideoDetail';
+import Footer from './components/Footer';
 
 // Create a new component. This component should produce some HTML
 class App extends Component {
@@ -15,7 +14,7 @@ class App extends Component {
 
     this.state = {
       videos: [],
-      selectedVideo: null
+      selectedVideo: null,
     };
 
     this.updateSelectedVideo = this.updateSelectedVideo.bind(this);
@@ -23,8 +22,8 @@ class App extends Component {
 
     YTSearch(
       {
-        key: "AIzaSyC_LTdisHxCffxKBQkdH6s_LRURT7oZFz4",
-        term: "javascript"
+        key: 'AIzaSyD4BHMBMfhrfJSbwhzMwmPYEnah148fZwk',
+        term: 'javascript',
       },
       videos => this.setState({ videos, selectedVideo: videos[0] })
     );
@@ -33,15 +32,15 @@ class App extends Component {
   updateVideos(term) {
     YTSearch(
       {
-        key: "AIzaSyC_LTdisHxCffxKBQkdH6s_LRURT7oZFz4",
-        term
+        key: 'AIzaSyD4BHMBMfhrfJSbwhzMwmPYEnah148fZwk',
+        term,
       },
       videos => this.setState({ videos })
     );
   }
 
   updateSelectedVideo(selectedVideo) {
-    console.log("made it here");
+    console.log('made it here');
     this.setState({ selectedVideo });
   }
 
@@ -50,14 +49,11 @@ class App extends Component {
       <div>
         <SearchBar updateVideosHandler={this.updateVideos} />
         <VideoDetail video={this.state.selectedVideo} />
-        <VideoList
-          updateSelectedVideoHandler={this.updateSelectedVideo}
-          videos={this.state.videos}
-        />
+        <VideoList updateSelectedVideoHandler={this.updateSelectedVideo} videos={this.state.videos} />
         <Footer />
       </div>
     );
   }
 }
 
-render(<App />, document.querySelector(".container"));
+render(<App />, document.querySelector('.container'));
