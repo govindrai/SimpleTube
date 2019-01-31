@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "engines": {
-    "node": "10.x",
+    "node": "10.x"
   },
   "description": "Gross Simplification of YouTube built on Node.js with React",
   "repository": "https://github.com/govindrai/SimpleTube.git",
